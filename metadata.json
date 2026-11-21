@@ -1,0 +1,6 @@
+{
+  "name": "AttendEase",
+  "description": "Smart Attendance. Simplified Management.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,13 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+attendease.db*
+attendease-java/target/
+attendease-java/data/
+.aistudio/
+.vscode/
