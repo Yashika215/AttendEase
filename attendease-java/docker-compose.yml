@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: attendease
+      POSTGRES_USER: attendease
+      POSTGRES_PASSWORD: attendease_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  attendease-backend:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/attendease
+      SPRING_DATASOURCE_USERNAME: attendease
+      SPRING_DATASOURCE_PASSWORD: attendease_password
+
+volumes:
+  postgres_data:
